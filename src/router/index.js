@@ -158,103 +158,27 @@ export const constantRoutes = [
   },
 
   {
-    path: '/core5',
+    path: '/core/lend',
     component: Layout,
-    redirect: '/core5',
-    name: 'coreDict',
-    meta: { title: '抵押贷款管理（业务员）', icon: 'el-icon-service' },
+    name: 'coreLend',
+    meta: { title: '标的管理', icon: 'el-icon-s-flag' },
     alwaysShow: true,
     children: [
       {
-        path: '/1',
-        name: '自助提交信息核对',
-        meta: { title: '自助提交信息核对' }
+        path: 'list',
+        name: 'coreLendList',
+        component: () => import('@/views/core/lend/list'),
+        meta: { title: '标的列表' }
       },
       {
-        path: '/2',
-        name: '人工服务信息录入',
-        meta: { title: '人工服务信息录入' }
-      },
-      { 
-        path: '/3',
-        name: '审核反馈信息',
-        meta: { title: '审核反馈信息' }
-      },
-      {
-        path: '/4',
-        name: '抵押贷款信息',
-        meta: { title: '抵押贷款信息' }
+        path: 'detail/:id',
+        name: 'coreLendDetail',
+        component: () => import('@/views/core/lend/detail'),
+        meta: { title: '标的详情' },
+        hidden: true
       }
     ]
-  },
-
-  {
-    path: '/core6',
-    component: Layout,
-    redirect: '/core6',
-    name: 'coreDict',
-    meta: { title: '抵押贷款信息管理（管理员）', icon: 'el-icon-time' },
-    alwaysShow: true,
-    children: [
-      {
-        path: '/5',
-        name: '抵押贷款信息审批',
-        meta: { title: '抵押贷款信息审批' }
-      },
-      {
-        path: '/6',
-        name: '审批信息通过',
-        meta: { title: '审批信息通过' }
-      },
-      {
-        path: '/7',
-        name: '审批信息不通过',
-        meta: { title: '审批信息不通过' }
-      }
-    ]
-  },
-
-  {
-    path: '/core1',
-    component: Layout,  
-    redirect: '/core1',
-    children: [{
-      path: 'core1',
-      name: '贷款资产审查（银行）',
-      meta: { title: '贷款资产审查（银行）', icon: 'el-icon-phone' }
-    }]
-  },
-  {
-    path: '/core2',
-    component: Layout,  
-    redirect: '/core2',
-    children: [{
-      path: 'core2',
-      name: '贷款申请审批（银行）',
-      meta: { title: '贷款申请审批（银行）', icon: 'el-icon-phone' }
-    }]
-  },
-  {
-    path: '/core3',
-    component: Layout,  
-    redirect: '/core3',
-    children: [{
-      path: 'core3',
-      name: '放款管理（银行）',
-      meta: { title: '放款管理（银行）', icon: 'el-icon-phone' }
-    }]
-  },
-  {
-    path: '/core4',
-    component: Layout,  
-    redirect: '/core4',
-    children: [{
-      path: 'core4',
-      name: '还款管理（银行）',
-      meta: { title: '还款管理（银行）', icon: 'el-icon-phone' }
-    }]
-  },
-
+  }
 
   // {
   //   path: '/example',
